@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Techudents - Arduino Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f4f4f4;
       margin: 0;
-      background: #f4f6f8;
-      color: #333;
+      padding: 0;
     }
+
     header {
       background-color: #2c3e50;
       color: white;
@@ -19,176 +20,156 @@
       justify-content: space-between;
       align-items: center;
     }
+
     nav a {
       color: white;
       margin: 0 1rem;
       text-decoration: none;
     }
+
     .container {
+      padding: 2rem;
       max-width: 900px;
       margin: auto;
-      padding: 2rem;
     }
-    h1, h2 {
-      color: #2c3e50;
-    }
+
     .project {
       background: white;
-      border-radius: 10px;
       padding: 1rem;
-      margin: 1rem 0;
+      border-radius: 10px;
+      margin-bottom: 1rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     .note {
       font-style: italic;
       color: #999;
     }
-    .hidden {
+
+    .upload-section {
       display: none;
-    }
-    .form-section {
-      background: #fff;
+      background: #fff3cd;
+      border-left: 6px solid #ffeeba;
       padding: 1rem;
       margin-top: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 5px;
     }
-    input, textarea, select {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    button {
+
+    footer {
       background: #2c3e50;
       color: white;
-      border: none;
-      padding: 0.7rem 1.2rem;
-      cursor: pointer;
-    }
-    footer {
       text-align: center;
       padding: 1rem;
-      background-color: #2c3e50;
-      color: white;
       margin-top: 2rem;
+    }
+
+    .btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #2980b9;
+    }
+
+    form input, form select {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .feedback, .support {
+      margin-top: 2rem;
+      background: #ecf0f1;
+      padding: 1rem;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Techudents</h1>
     <nav>
       <a href="#projects">Projects</a>
       <a href="#support">Support</a>
       <a href="#feedback">Feedback</a>
-      <a href="#adminLogin">Admin</a>
+      <a href="#" onclick="promptPassword()">Admin Login</a>
     </nav>
   </header>
 
   <div class="container">
-    <p>Welcome to Techudents by <strong>Chiraayu Gautam</strong>. Explore amazing Arduino projects!</p>
+    <h2>Welcome to Techudents</h2>
+    <p>By <strong>Chiraayu Gautam</strong>. Explore free and premium Arduino projects.</p>
 
     <section id="projects">
-      <h2>Arduino Projects</h2>
-
-      <div class="project">
-        <a href="project_pdfs/LightActivated_Street_Lamp.pdf" target="_blank">Light-Activated Street Lamp</a> — Free
-      </div>
-
-      <div class="project">
-        <a href="project_pdfs/Automatic_Plant_Watering_System.pdf" target="_blank">Automatic Plant Watering System</a> — Free
-      </div>
-
-      <div class="project">
-        <a href="project_pdfs/Temperature_and_Humidity_Logger.pdf" target="_blank">Temperature and Humidity Logger</a> — Free
-      </div>
-
-      <div class="project">
-        <a href="project_pdfs/Fire_Detection_Alarm.pdf" target="_blank">Fire Detection Alarm</a> — Free
-      </div>
-
-      <div class="project" id="obstacle-project">
-        <span class="note">Obstacle Avoiding Robot — Paid (Login to download)</span>
-      </div>
-
-      <div class="project">
-        <a href="project_pdfs/Digital_Password_Lock.pdf" target="_blank">Digital Password Lock</a> — Free
-      </div>
-
-      <div class="project">
-        <a href="project_pdfs/GPS_Tracker_with_Google_Maps.pdf" target="_blank">GPS Tracker with Google Maps</a> — Free
-      </div>
-
-      <div class="project" id="bluetooth-project">
-        <span class="note">Bluetooth Home Automation — Paid (Login to download)</span>
-      </div>
+      <h2>Projects</h2>
+      <div class="project"><strong>Light-Activated Street Lamp</strong> - <a href="project_pdfs/LightActivated_Street_Lamp.pdf" target="_blank">Download PDF</a></div>
+      <div class="project"><strong>Automatic Plant Watering System</strong> - <a href="project_pdfs/Automatic_Plant_Watering_System.pdf" target="_blank">Download PDF</a></div>
+      <div class="project"><strong>Temperature and Humidity Logger</strong> - <a href="project_pdfs/Temperature_and_Humidity_Logger.pdf" target="_blank">Download PDF</a></div>
+      <div class="project"><strong>Fire Detection Alarm</strong> - <a href="project_pdfs/Fire_Detection_Alarm.pdf" target="_blank">Download PDF</a></div>
+      <div class="project"><strong>Obstacle Avoiding Robot</strong> - <span class="note">Paid Project - Login to download</span></div>
+      <div class="project"><strong>Digital Password Lock</strong> - <a href="project_pdfs/Digital_Password_Lock.pdf" target="_blank">Download PDF</a></div>
+      <div class="project"><strong>GPS Tracker with Google Maps</strong> - <a href="project_pdfs/GPS_Tracker_with_Google_Maps.pdf" target="_blank">Download PDF</a></div>
+      <div class="project"><strong>Bluetooth Home Automation</strong> - <span class="note">Paid Project - Login to download</span></div>
     </section>
 
-    <div class="form-section" id="support">
-      <h2>Support</h2>
-      <p>Email: <a href="mailto:rc.chiraayu.techudents@gmail.com">rc.chiraayu.techudents@gmail.com</a></p>
-    </div>
-
-    <div class="form-section" id="feedback">
-      <h2>Feedback</h2>
-      <form action="https://formspree.io/f/xnnveykv" method="POST">
-        <label>Your Email</label>
-        <input type="email" name="email" required>
-        <label>Message</label>
-        <textarea name="message" rows="4" required></textarea>
-        <button type="submit">Send Feedback</button>
-      </form>
-    </div>
-
-    <div class="form-section" id="adminLogin">
-      <h2>Admin Login</h2>
-      <form onsubmit="adminLogin(event)">
-        <label for="adminEmail">Email:</label>
-        <input type="email" id="adminEmail" required>
-        <label for="adminPass">Password:</label>
-        <input type="password" id="adminPass" required>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-
-    <div class="form-section hidden" id="uploadSection">
-      <h2>Upload New Project</h2>
+    <div class="upload-section" id="uploadForm">
+      <h3>Upload New Project</h3>
       <form>
-        <input type="text" placeholder="Project Title" required>
-        <input type="file" accept="application/pdf" required>
+        <input type="text" placeholder="Project Title" required /><br>
+        <input type="file" accept="application/pdf" required /><br>
         <select>
           <option value="free">Free</option>
           <option value="paid">Paid</option>
-        </select>
-        <button type="submit">Upload</button>
+        </select><br>
+        <button type="submit" class="btn">Upload</button>
+      </form>
+      <p class="note">* File upload feature requires Firebase or backend integration.</p>
+    </div>
+
+    <div class="support" id="support">
+      <h3>Support</h3>
+      <p>Email us at: <a href="mailto:rc.chiraayu.techudents@gmail.com">rc.chiraayu.techudents@gmail.com</a></p>
+    </div>
+
+    <div class="feedback" id="feedback">
+      <h3>Feedback</h3>
+      <form action="https://formspree.io/f/xnnveykv" method="POST">
+        <textarea name="message" rows="4" style="width:100%" placeholder="Write your feedback here..." required></textarea><br>
+        <button type="submit" class="btn">Send Feedback</button>
       </form>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Techudents | Developed by Chiraayu Gautam
+    &copy; 2025 Techudents by Chiraayu Gautam
   </footer>
 
   <script>
-    function adminLogin(e) {
-      e.preventDefault();
-      const email = document.getElementById("adminEmail").value;
-      const pass = document.getElementById("adminPass").value;
-
-      if (email === "rc.chiraayu.techudents@gmail.com" && pass === "admin123") {
-        alert("Login successful!");
-        document.getElementById("uploadSection").classList.remove("hidden");
-
-        // Reveal paid downloads
-        document.getElementById("obstacle-project").innerHTML =
-          '<a href="project_pdfs/Obstacle_Avoiding_Robot.pdf" target="_blank">Obstacle Avoiding Robot (Paid)</a>';
-        document.getElementById("bluetooth-project").innerHTML =
-          '<a href="project_pdfs/Bluetooth_Home_Automation.pdf" target="_blank">Bluetooth Home Automation (Paid)</a>';
+    function promptPassword() {
+      const pass = prompt("Enter Admin Password:");
+      if (pass === "admin123") {
+        document.getElementById("uploadForm").style.display = "block";
+        const notes = document.querySelectorAll('.note');
+        notes.forEach(el => {
+          if (el.innerText.includes("Paid Project")) {
+            const title = el.previousSibling.textContent.trim();
+            const fileName = title.replace(/\s+/g, "_") + ".pdf";
+            el.innerHTML = `<a href="project_pdfs/${fileName}" target="_blank">Download PDF</a> - Paid`;
+          }
+        });
+        alert("Admin access granted.");
       } else {
-        alert("Invalid credentials!");
+        alert("Incorrect password!");
       }
     }
   </script>
+
 </body>
 </html>
