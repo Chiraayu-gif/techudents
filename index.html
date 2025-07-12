@@ -2,98 +2,193 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Techudents - Arduino Projects</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 2rem;
-      background-color: #f5f5f5;
+      background: #f4f6f8;
+      color: #333;
     }
-    h1 {
-      color: #2c3e50;
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    a {
-      color: #2980b9;
+    nav a {
+      color: white;
+      margin: 0 1rem;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
     }
-    .section {
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 8px;
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .project {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 1rem 0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    label {
-      font-weight: bold;
+    .note {
+      font-style: italic;
+      color: #999;
     }
-    input, textarea, button {
+    .hidden {
+      display: none;
+    }
+    .form-section {
+      background: #fff;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    input, textarea, select {
       width: 100%;
-      max-width: 500px;
-      padding: 8px;
-      margin-top: 6px;
-      margin-bottom: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
     }
     button {
-      background-color: #2980b9;
+      background: #2c3e50;
       color: white;
       border: none;
+      padding: 0.7rem 1.2rem;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #1c5980;
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2c3e50;
+      color: white;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Techudents</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#support">Support</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#adminLogin">Admin</a>
+    </nav>
+  </header>
 
-  <h1>Welcome to Techudents</h1>
-  <p>By <strong>Chiraayu Gautam</strong></p>
+  <div class="container">
+    <p>Welcome to Techudents by <strong>Chiraayu Gautam</strong>. Explore amazing Arduino projects!</p>
 
-  <div class="section">
-    <h2>Arduino Projects</h2>
-    <ul>
-      <li><a href="project_pdfs/LightActivated_Street_Lamp.pdf" target="_blank">Light-Activated Street Lamp</a></li>
-      <li><a href="project_pdfs/Automatic_Plant_Watering_System.pdf" target="_blank">Automatic Plant Watering System</a></li>
-      <li><a href="project_pdfs/Temperature_and_Humidity_Logger.pdf" target="_blank">Temperature and Humidity Logger</a></li>
-      <li><a href="project_pdfs/Fire_Detection_Alarm.pdf" target="_blank">Fire Detection Alarm</a></li>
-      <li><a href="project_pdfs/Obstacle_Avoiding_Robot.pdf" target="_blank">Obstacle Avoiding Robot</a></li>
-      <li><a href="project_pdfs/Digital_Password_Lock.pdf" target="_blank">Digital Password Lock</a></li>
-      <li><a href="project_pdfs/GPS_Tracker_with_Google_Maps.pdf" target="_blank">GPS Tracker with Google Maps</a></li>
-      <li><a href="project_pdfs/Bluetooth_Home_Automation.pdf" target="_blank">Bluetooth Home Automation</a></li>
-    </ul>
+    <section id="projects">
+      <h2>Arduino Projects</h2>
+
+      <div class="project">
+        <a href="project_pdfs/LightActivated_Street_Lamp.pdf" target="_blank">Light-Activated Street Lamp</a> — Free
+      </div>
+
+      <div class="project">
+        <a href="project_pdfs/Automatic_Plant_Watering_System.pdf" target="_blank">Automatic Plant Watering System</a> — Free
+      </div>
+
+      <div class="project">
+        <a href="project_pdfs/Temperature_and_Humidity_Logger.pdf" target="_blank">Temperature and Humidity Logger</a> — Free
+      </div>
+
+      <div class="project">
+        <a href="project_pdfs/Fire_Detection_Alarm.pdf" target="_blank">Fire Detection Alarm</a> — Free
+      </div>
+
+      <div class="project" id="obstacle-project">
+        <span class="note">Obstacle Avoiding Robot — Paid (Login to download)</span>
+      </div>
+
+      <div class="project">
+        <a href="project_pdfs/Digital_Password_Lock.pdf" target="_blank">Digital Password Lock</a> — Free
+      </div>
+
+      <div class="project">
+        <a href="project_pdfs/GPS_Tracker_with_Google_Maps.pdf" target="_blank">GPS Tracker with Google Maps</a> — Free
+      </div>
+
+      <div class="project" id="bluetooth-project">
+        <span class="note">Bluetooth Home Automation — Paid (Login to download)</span>
+      </div>
+    </section>
+
+    <div class="form-section" id="support">
+      <h2>Support</h2>
+      <p>Email: <a href="mailto:rc.chiraayu.techudents@gmail.com">rc.chiraayu.techudents@gmail.com</a></p>
+    </div>
+
+    <div class="form-section" id="feedback">
+      <h2>Feedback</h2>
+      <form action="https://formspree.io/f/xnnveykv" method="POST">
+        <label>Your Email</label>
+        <input type="email" name="email" required>
+        <label>Message</label>
+        <textarea name="message" rows="4" required></textarea>
+        <button type="submit">Send Feedback</button>
+      </form>
+    </div>
+
+    <div class="form-section" id="adminLogin">
+      <h2>Admin Login</h2>
+      <form onsubmit="adminLogin(event)">
+        <label for="adminEmail">Email:</label>
+        <input type="email" id="adminEmail" required>
+        <label for="adminPass">Password:</label>
+        <input type="password" id="adminPass" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <div class="form-section hidden" id="uploadSection">
+      <h2>Upload New Project</h2>
+      <form>
+        <input type="text" placeholder="Project Title" required>
+        <input type="file" accept="application/pdf" required>
+        <select>
+          <option value="free">Free</option>
+          <option value="paid">Paid</option>
+        </select>
+        <button type="submit">Upload</button>
+      </form>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Support</h2>
-    <p>If you need assistance, contact us at: <a href="mailto:rc.chiraayu.techudents@gmail.com">rc.chiraayu.techudents@gmail.com</a></p>
-  </div>
+  <footer>
+    &copy; 2025 Techudents | Developed by Chiraayu Gautam
+  </footer>
 
-  <div class="section">
-    <h2>Feedback</h2>
-    <form action="https://formspree.io/f/xnnveykv" method="POST">
-      <label for="email">Your Email:</label>
-      <input type="email" name="email" id="email" required />
+  <script>
+    function adminLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById("adminEmail").value;
+      const pass = document.getElementById("adminPass").value;
 
-      <label for="message">Your Feedback:</label>
-      <textarea name="message" id="message" rows="5" required></textarea>
+      if (email === "rc.chiraayu.techudents@gmail.com" && pass === "admin123") {
+        alert("Login successful!");
+        document.getElementById("uploadSection").classList.remove("hidden");
 
-      <button type="submit">Send Feedback</button>
-    </form>
-  </div>
-
+        // Reveal paid downloads
+        document.getElementById("obstacle-project").innerHTML =
+          '<a href="project_pdfs/Obstacle_Avoiding_Robot.pdf" target="_blank">Obstacle Avoiding Robot (Paid)</a>';
+        document.getElementById("bluetooth-project").innerHTML =
+          '<a href="project_pdfs/Bluetooth_Home_Automation.pdf" target="_blank">Bluetooth Home Automation (Paid)</a>';
+      } else {
+        alert("Invalid credentials!");
+      }
+    }
+  </script>
 </body>
 </html>
